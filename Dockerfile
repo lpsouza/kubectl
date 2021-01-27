@@ -7,5 +7,3 @@ RUN apt-get update && apt-get install -y apt-transport-https gnupg2 curl && \
     echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | tee -a /etc/apt/sources.list.d/kubernetes.list && \
     apt-get update && \
     apt-get install -y kubectl
-
-ENV KUBECONFIG=/config
