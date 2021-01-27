@@ -8,6 +8,4 @@ RUN apt-get update && apt-get install -y apt-transport-https gnupg2 curl && \
     apt-get update && \
     apt-get install -y kubectl
 
-ENV KUBECONFIG=/kubectl/config
-
-WORKDIR /kubectl
+ENV KUBECONFIG=/config
