@@ -9,3 +9,10 @@ RUN apt-get update && apt-get install -y apt-transport-https gnupg2 curl && \
     echo "deb https://baltocdn.com/helm/stable/debian/ all main" | tee /etc/apt/sources.list.d/helm-stable-debian.list && \
     apt-get update && \
     apt-get install -y kubectl helm jq
+
+RUN curl -O https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh && \
+    bash install.sh --accept-all-defaults
+
+RUN rm install.sh
+
+ENV PATH=/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
